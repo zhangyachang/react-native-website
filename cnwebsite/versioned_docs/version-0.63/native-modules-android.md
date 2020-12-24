@@ -334,13 +334,13 @@ import { NativeEventEmitter, NativeModules } from 'react-native';
   componentDidMount() {
     // ...
     const eventEmitter = new NativeEventEmitter(NativeModules.ToastExample);
-    this.eventEmitter = eventEmitter.addListener('EventReminder', (event) => {
+    this.eventListener = eventEmitter.addListener('EventReminder', (event) => {
        console.log(event.eventProperty) // "someValue"
     };
     // ...
   }
   componentWillUnmount() {
-    this.eventEmitter.remove(); // Removes the listener
+    this.eventListener.remove(); // Removes the listener
   }
 ```
 
